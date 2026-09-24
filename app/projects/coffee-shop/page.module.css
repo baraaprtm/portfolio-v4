@@ -1,4 +1,4 @@
-:root {
+.wrapper {
   --cs-primary: #d4a373;
   --cs-secondary: #faedcd;
   --cs-bg-dark: #1a1a1a;
@@ -8,6 +8,13 @@
   --cs-glass: rgba(26, 26, 26, 0.85);
   --cs-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   --cs-transition: all 0.3s ease;
+
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cs-bg-darker);
+  color: var(--cs-text-light);
+  overflow-x: hidden;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
 .wrapper * {
@@ -18,19 +25,6 @@
   border: none;
   text-decoration: none;
   list-style: none;
-}
-
-:global(html) {
-  scroll-behavior: smooth;
-}
-
-.wrapper {
-  font-family: "Poppins", sans-serif;
-  background-color: var(--cs-bg-darker);
-  color: var(--cs-text-light);
-  overflow-x: hidden;
-  line-height: 1.6;
-  min-height: 100vh;
 }
 
 .container {
@@ -380,6 +374,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -398,9 +393,6 @@
 }
 
 @media (max-width: 992px) {
-  :global(html) {
-    font-size: 90%;
-  }
   .hero h1 {
     font-size: 2.8rem;
   }
@@ -448,9 +440,6 @@
 }
 
 @media (max-width: 450px) {
-  :global(html) {
-    font-size: 80%;
-  }
   .hero h1 {
     font-size: 2.2rem;
   }
