@@ -1,0 +1,469 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #333333;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Standalone Header */
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #121212;
+  color: #ffffff;
+  position: relative;
+  z-index: 1000;
+}
+.projectLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+.projectLogo span {
+  color: #00ff99;
+}
+.projectBackLink {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.projectBackLink:hover {
+  color: #00ff99;
+}
+
+/* CompanyProfile Navbar */
+.cpNavbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.navScrolled {
+  background: linear-gradient(to right, #009688, #004d40);
+}
+.navTransparent {
+  background: transparent;
+  box-shadow: none;
+}
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.brandLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004d40;
+  text-decoration: none;
+}
+.navScrolled .brandLogo {
+  color: #ffffff;
+}
+.desktopNav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.desktopNav li a {
+  color: #004d40;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navScrolled .desktopNav li a {
+  color: #ffffff;
+}
+.desktopNav li a:hover {
+  opacity: 0.8;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #004d40;
+  z-index: 1002;
+  position: relative;
+}
+.navScrolled .hamburger {
+  color: #ffffff;
+}
+
+/* Sidenav */
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+}
+.sidenavOpen {
+  right: 0;
+}
+.sidenav a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+.sidenav a:hover {
+  background: #f9f9f9;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Common */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section {
+  padding: 4rem 0;
+  background: #ffffff;
+}
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #004d40;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+.sectionTitleLight {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+.subTitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.aboutText {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Slider */
+.slider {
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+.slideActive {
+  opacity: 1;
+}
+.caption {
+  padding-left: 10%;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1s;
+}
+.caption h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.caption p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About / Skills */
+.skills {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.skill {
+  margin-bottom: 1.5rem;
+}
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+.progressBg {
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.progressBar {
+  height: 100%;
+  background: #009688;
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+/* Clients */
+.clientsSection {
+  background: transparent;
+  padding: 6rem 0;
+  position: relative;
+}
+.clientsGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.clientTextLogo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #bdbdbd;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.clientTextLogo:hover {
+  color: #009688;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Services */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.serviceCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+.serviceIcon {
+  font-size: 3rem;
+  color: #009688;
+  margin-bottom: 1rem;
+}
+.serviceCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.serviceCard p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Portfolio */
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.portfolioImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.portfolioImg:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+.lightboxImg {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact */
+.contactSection {
+  background: #004d40;
+  color: #fff;
+  padding: 4rem 0;
+}
+.contactDesc {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #b2dfdb;
+}
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+.contactInfoCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+}
+.contactInfoCard h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.contactItem .material-icons {
+  color: #80cbc4;
+}
+.contactItem p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contactFormCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+}
+.inputField {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #80cbc4;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+.inputField:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+.submitBtn {
+  width: 100%;
+  background: #009688;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.submitBtn:hover {
+  background: #00796b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .caption h2 {
+    font-size: 2rem;
+  }
+  .caption p {
+    font-size: 1.2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .clientsGrid {
+    gap: 2rem;
+  }
+  .clientTextLogo {
+    font-size: 1.5rem;
+  }
+}

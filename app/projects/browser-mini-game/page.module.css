@@ -1,0 +1,140 @@
+.wrapper {
+  min-height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1a1a1a;
+  position: relative;
+  z-index: 50;
+}
+
+.projectLogo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.projectLogo span {
+  color: #00ff99;
+}
+
+.projectBackLink {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.projectBackLink:hover {
+  color: #00ff99;
+}
+
+.gameContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(0, 255, 153, 0.1) 0%,
+      transparent 60%
+    ),
+    linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.gameTitle,
+.gameScore {
+  font-size: 48px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.mulaiBtn {
+  display: block;
+  margin: 10px auto;
+  background-color: #00ff99;
+  color: #121212;
+  border: none;
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container {
+  width: 600px;
+  max-width: 100%;
+  margin: 20px auto 0;
+  cursor: url("/projects/browser-mini-game/img/palu1.png"), auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.container:active {
+  cursor: url("/projects/browser-mini-game/img/palu2.png"), auto;
+}
+
+.tanah {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.tanah::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50%;
+  background: url("/projects/browser-mini-game/img/tanah.png") bottom center
+    no-repeat;
+  background-size: 80%;
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+}
+
+.tikus {
+  width: 100%;
+  height: 100%;
+  background: url("/projects/browser-mini-game/img/tikus.png") bottom center
+    no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 50%;
+  transition: top 0.3s;
+  pointer-events: none;
+}
+
+.tanah.muncul .tikus {
+  top: -15px;
+}
+
+@media (max-width: 768px) {
+  .gameTitle,
+  .gameScore {
+    font-size: 36px;
+  }
+  .container {
+    width: 90%;
+  }
+}

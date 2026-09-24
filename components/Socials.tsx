@@ -37,7 +37,11 @@ interface SocialsProps {
 
 const Socials = ({ containerStyles, iconStyles }: SocialsProps) => {
   return (
-    <div className={containerStyles}>
+    <div
+      className={`flex justify-center xl:justify-start ${
+        containerStyles ?? ""
+      }`}
+    >
       {socials.map((item, index) => {
         return (
           <Link
