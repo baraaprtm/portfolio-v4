@@ -14,7 +14,7 @@ Portfolio ini digunakan sebagai **catalog dan showcase** untuk memperkenalkan pr
 
 **Portfolio V4**
 
-baraaprtm.vercel.app/
+https://baraaprtm.vercel.app
 
 **GitHub Repository**
 
