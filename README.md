@@ -1,18 +1,22 @@
 # Baraa Pratama — Portfolio V4
 
-Personal portfolio website milik **Baraa Pratama**, seorang **Software Developer** yang berfokus pada software development, backend development, REST API, database, system design, dan web development.
+Personal portfolio website milik **Baraa Pratama**, seorang **Software Developer** yang berfokus pada software development, backend systems, REST API, database, system design, dan web development.
 
-Portfolio ini digunakan untuk menampilkan profil, skills, services, pengalaman project, dan berbagai project yang telah dibuat.
+Portfolio ini digunakan sebagai **catalog dan showcase** untuk memperkenalkan profil, skills, services, dan project yang telah dibuat.
+
+> **Portfolio ≠ Project**
+>
+> Portfolio berfungsi sebagai showcase. Setiap project memiliki identitas dan halaman website sendiri.
 
 ---
 
 ## 🌐 Live Website
 
-**Portfolio V4:**
+**Portfolio V4**
 
 https://baraaprtm-portfolio-v4.vercel.app/
 
-**GitHub Repository:**
+**GitHub Repository**
 
 https://github.com/baraaprtm/portfolio-v4
 
@@ -20,11 +24,11 @@ https://github.com/baraaprtm/portfolio-v4
 
 ## 👨‍💻 About
 
-Saya adalah **Software Developer** yang tertarik pada pengembangan software, backend systems, API, database, dan system architecture.
+Saya adalah **Software Developer** yang tertarik pada pengembangan software, backend systems, REST API, database, system architecture, dan web development.
 
-Saya berfokus pada bagaimana sebuah software dapat dibangun dengan struktur yang rapi, scalable, maintainable, dan dapat digunakan dengan baik.
+Saya berfokus pada bagaimana sebuah software dapat dibangun dengan struktur yang rapi, maintainable, scalable, dan dapat digunakan dengan baik.
 
-Portfolio V4 dibuat sebagai personal website untuk memperkenalkan diri, menampilkan skills, services, dan project yang telah saya kerjakan.
+Portfolio V4 dibuat sebagai personal website untuk memperkenalkan diri, menampilkan skills, services, dan berbagai project yang telah saya kerjakan.
 
 ---
 
@@ -45,7 +49,7 @@ Portfolio ini berfokus pada beberapa area utama:
 
 # 🛠️ Tech Stack
 
-Portfolio V4 dibuat menggunakan beberapa teknologi modern dalam ekosistem web development.
+Portfolio V4 dibuat menggunakan teknologi modern dalam ekosistem web development.
 
 ### Core
 
@@ -86,7 +90,7 @@ Portfolio V4 dibuat menggunakan beberapa teknologi modern dalam ekosistem web de
 
 # 📚 Technologies
 
-Berikut teknologi yang saya gunakan atau pelajari dalam software development.
+Teknologi yang saya gunakan atau pelajari dalam software development.
 
 ## Languages
 
@@ -139,68 +143,55 @@ Berikut teknologi yang saya gunakan atau pelajari dalam software development.
 
 # ✨ Features
 
-Portfolio V4 memiliki beberapa fitur utama.
-
-### 🏠 Home
+## 🏠 Home
 
 Menampilkan identitas utama:
 
 **Baraa Pratama**
 **Software Developer**
 
-serta informasi singkat mengenai fokus dan bidang yang ditekuni.
+Dengan deskripsi singkat mengenai fokus dan bidang software development yang ditekuni.
 
 ---
 
-### 👤 About
+## 👤 About
 
 Section About digunakan untuk memperkenalkan:
 
 - Identitas
 - Role sebagai Software Developer
-- Fokus pengembangan software
-- Pendekatan terhadap software development
-- Minat terhadap backend, database, API, dan system design
+- Fokus software development
+- Skills dan teknologi
+- Pendekatan terhadap pengembangan software
+- Minat terhadap backend, API, database, dan system design
 
 ---
 
-### ⚙️ Services
+## ⚙️ Services
 
-Portfolio menampilkan beberapa layanan/area pengembangan:
+Portfolio menyediakan beberapa area layanan utama.
 
-#### 01 — Backend Development
+### 01 — Backend Development
 
-Pengembangan backend menggunakan teknologi seperti Node.js, NestJS, REST API, dan database.
+Building scalable backend systems with Node.js, NestJS, and modern server-side technologies.
 
-#### 02 — API Development
+### 02 — API Development
 
-Membangun REST API yang terstruktur dan dapat digunakan oleh berbagai aplikasi atau client.
+Designing and developing robust REST APIs for web applications and external integrations.
 
-#### 03 — Database Design
+### 03 — Database Design
 
-Merancang dan mengelola database menggunakan:
+Designing structured and reliable databases using PostgreSQL, MySQL, MongoDB, and Redis.
 
-- PostgreSQL
-- MySQL
-- MongoDB
-- Redis
+### 04 — System Design
 
-#### 04 — System Design
-
-Merancang struktur sistem dengan mempertimbangkan:
-
-- Application architecture
-- Scalability
-- Caching
-- Messaging
-- Distributed systems
-- Maintainability
+Designing scalable software architectures with focus on performance, reliability, caching, and maintainability.
 
 ---
 
-### 💼 Work / Projects
+## 💼 Work / Projects
 
-Portfolio memiliki section untuk menampilkan project-project yang telah dibuat.
+Section Work digunakan sebagai **catalog project**.
 
 Setiap project dapat menampilkan:
 
@@ -208,26 +199,123 @@ Setiap project dapat menampilkan:
 - Project description
 - Technologies
 - Project preview
-- Project link
-- Source code jika tersedia
+- GitHub repository
+- Live project website
 
-Project yang ditampilkan merupakan project yang benar-benar dibuat dan dimiliki oleh Baraa Pratama.
+Project yang ditampilkan merupakan project yang dibuat dan dikembangkan sebagai bagian dari portfolio Baraa Pratama.
 
----
+Portfolio tidak menampung seluruh halaman aplikasi project.
 
-### 📄 Resume
-
-Portfolio menyediakan halaman Resume untuk menampilkan informasi profesional dan teknologi yang digunakan.
+Sebaliknya, setiap project dapat memiliki **standalone website** sendiri.
 
 ---
 
-### 📩 Contact
+# 🚀 Standalone Projects
 
-Portfolio menyediakan halaman Contact agar pengunjung dapat menghubungi saya.
+Project dalam portfolio mengikuti prinsip:
 
-Email:
+```text
+Portfolio
+│
+├── Project 1
+│   └── Standalone Website
+│
+├── Project 2
+│   └── Standalone Website
+│
+├── Project 3
+│   └── Standalone Website
+│
+└── ...
+```
 
-**[baraaprtm@gmail.com](mailto:baraaprtm@gmail.com)**
+Beberapa project yang tersedia antara lain:
+
+### ☕ Coffee Shop
+
+Standalone coffee shop website dengan dark visual design, menu section, contact section, dan responsive navigation.
+
+Route:
+
+```text
+/projects/coffee-shop
+```
+
+### 🔐 Secure Authentication
+
+Standalone authentication project yang mendemonstrasikan authentication flow, user login, registration, protected resources, dan session handling.
+
+Route:
+
+```text
+/projects/secure-authentication
+```
+
+### 🎨 UI/UX Landing Page
+
+Standalone landing page project yang berfokus pada modern UI, responsive layout, navigation, visual hierarchy, dan user experience.
+
+Route:
+
+```text
+/projects/ui-ux-landing-page
+```
+
+### 🏢 Corporate Profile
+
+Standalone corporate profile website untuk menampilkan informasi perusahaan, services, profile, dan contact information.
+
+Route:
+
+```text
+/projects/corporate-profile
+```
+
+### 📐 CSS Flexbox
+
+Standalone project yang digunakan untuk mengeksplorasi layout dan animation menggunakan CSS Flexbox.
+
+Route:
+
+```text
+/projects/css-flexbox
+```
+
+### 🎮 Browser Mini Game
+
+Standalone browser game project yang dibuat untuk mengeksplorasi interaction, animation, sound, dan browser-based gameplay.
+
+Route:
+
+```text
+/projects/browser-mini-game
+```
+
+> Project list dapat berkembang seiring bertambahnya project baru.
+
+---
+
+# 📄 Resume
+
+Portfolio menyediakan halaman Resume yang berisi informasi mengenai:
+
+- Experience
+- Education / Learning Journey
+- Skills
+- About
+- Technologies
+
+Resume digunakan untuk memberikan gambaran mengenai perjalanan belajar dan pengalaman dalam software development.
+
+---
+
+# 📩 Contact
+
+Portfolio menyediakan halaman Contact untuk memudahkan pengunjung menghubungi saya mengenai project, collaboration, atau software development.
+
+**Email**
+
+[baraaprtm@gmail.com](mailto:baraaprtm@gmail.com)
 
 ---
 
@@ -249,16 +337,20 @@ https://www.instagram.com/baraaprtm_
 
 https://t.me/baraaprtm
 
+### Discord
+
+https://discord.com/users/baraaprtm
+
 ---
 
 # 📊 Portfolio Statistics
 
-Portfolio menggunakan beberapa statistik untuk menggambarkan ecosystem development yang dipelajari dan digunakan.
+Portfolio menampilkan beberapa statistik sebagai bagian dari informasi singkat mengenai development journey.
 
-- **10+ Technologies**
-- **5+ Backend Tools**
-- **10+ Projects**
-- **100+ GitHub Commits**
+- **2** Years of Experience
+- **10+** Projects Completed
+- **20+** Technologies Mastered
+- **100+** Code Commits
 
 ---
 
@@ -266,19 +358,56 @@ Portfolio menggunakan beberapa statistik untuk menggambarkan ecosystem developme
 
 Portfolio V4 menggunakan **Next.js App Router**.
 
-Struktur utama:
+Struktur utama saat ini:
 
 ```text
 portfolio-v4/
 │
 ├── app/
-│   ├── contact/
-│   ├── resume/
-│   ├── services/
-│   ├── work/
-│   ├── page.tsx
-│   ├── layout.tsx
-│   └── globals.css
+│   │
+│   ├── (portfolio)/
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── resume/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── work/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── projects/
+│   │   │
+│   │   ├── browser-mini-game/
+│   │   │   ├── page.tsx
+│   │   │   └── page.module.css
+│   │   │
+│   │   ├── coffee-shop/
+│   │   │   ├── page.tsx
+│   │   │   └── page.module.css
+│   │   │
+│   │   ├── corporate-profile/
+│   │   │   ├── page.tsx
+│   │   │   └── page.module.css
+│   │   │
+│   │   ├── css-flexbox/
+│   │   │   ├── page.tsx
+│   │   │   └── page.module.css
+│   │   │
+│   │   ├── secure-authentication/
+│   │   │   └── page.tsx
+│   │   │
+│   │   └── ui-ux-landing-page/
+│   │       ├── page.tsx
+│   │       └── page.module.css
+│   │
+│   ├── globals.css
+│   └── layout.tsx
 │
 ├── components/
 │   ├── Header.tsx
@@ -288,11 +417,12 @@ portfolio-v4/
 │   ├── Stats.tsx
 │   ├── Photo.tsx
 │   ├── PageTransition.tsx
-│   └── StairTransition.tsx
+│   ├── StairTransition.tsx
+│   └── ...
 │
 ├── public/
 │   ├── assets/
-│   └── images/
+│   └── projects/
 │
 ├── lib/
 │
@@ -305,13 +435,13 @@ portfolio-v4/
 └── README.md
 ```
 
-> Struktur dapat berkembang seiring pengembangan Portfolio V4.
+> Struktur project dapat berkembang seiring pengembangan Portfolio V4.
 
 ---
 
 # 🚀 Getting Started
 
-Untuk menjalankan Portfolio V4 secara lokal, pastikan software berikut sudah terinstall:
+Pastikan software berikut sudah terinstall:
 
 - Node.js
 - npm
@@ -325,7 +455,7 @@ Untuk menjalankan Portfolio V4 secara lokal, pastikan software berikut sudah ter
 git clone https://github.com/baraaprtm/portfolio-v4.git
 ```
 
-Masuk ke folder project:
+Masuk ke folder:
 
 ```bash
 cd portfolio-v4
@@ -335,25 +465,19 @@ cd portfolio-v4
 
 ## 2. Install Dependencies
 
-Jalankan:
-
 ```bash
 npm install
 ```
 
-Command ini akan menginstall seluruh dependency yang diperlukan oleh Portfolio V4.
-
 ---
 
-## 3. Jalankan Development Server
-
-Gunakan:
+## 3. Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Setelah server berjalan, buka:
+Kemudian buka:
 
 ```text
 http://localhost:3000
@@ -363,19 +487,19 @@ http://localhost:3000
 
 # 🏗️ Production Build
 
-Sebelum melakukan deployment, project dapat di-build menggunakan:
+Untuk melakukan pengecekan production build:
 
 ```bash
 npm run build
 ```
 
-Jika build berhasil, jalankan production server:
+Jika build berhasil:
 
 ```bash
 npm start
 ```
 
-Website dapat diakses melalui:
+Production server akan berjalan di:
 
 ```text
 http://localhost:3000
@@ -389,17 +513,11 @@ Portfolio V4 juga memiliki konfigurasi Docker.
 
 ## Build Docker Image
 
-Gunakan:
-
 ```bash
 docker build -t baraaprtm-portfolio-v4 .
 ```
 
----
-
 ## Run Docker Container
-
-Gunakan:
 
 ```bash
 docker run -p 3000:3000 baraaprtm-portfolio-v4
@@ -413,30 +531,21 @@ http://localhost:3000
 
 ---
 
-# 📦 Export Docker Image
+## Export Docker Image
 
-Docker image disimpan oleh Docker pada sistem internalnya dan bukan sebagai file biasa di folder project.
-
-Untuk mengekspor image menjadi file `.tar`, gunakan:
+Docker image dapat diekspor menjadi file `.tar` menggunakan:
 
 ```bash
 docker save -o baraaprtm-portfolio-v4.tar baraaprtm-portfolio-v4
 ```
 
-File berikut akan dibuat:
+File:
 
 ```text
 baraaprtm-portfolio-v4.tar
 ```
 
-File tersebut dapat dipindahkan ke:
-
-- External drive
-- Flash drive
-- Komputer lain
-- Storage lainnya
-
-Untuk mengimport kembali image tersebut:
+Untuk mengimport kembali:
 
 ```bash
 docker load -i baraaprtm-portfolio-v4.tar
@@ -468,27 +577,25 @@ Vercel Deployment
 
 # 🌿 Git Workflow
 
-Setelah melakukan perubahan:
-
-### Check status
+Check perubahan:
 
 ```bash
 git status
 ```
 
-### Add changes
+Add perubahan:
 
 ```bash
 git add .
 ```
 
-### Commit
+Commit:
 
 ```bash
 git commit -m "update portfolio"
 ```
 
-### Push
+Push:
 
 ```bash
 git push origin main
@@ -508,7 +615,7 @@ Repository:
 
 https://github.com/baraaprtm/portfolio-v4
 
-Setiap perubahan yang berhasil di-push ke repository dapat digunakan sebagai sumber deployment sesuai konfigurasi Vercel.
+Setiap perubahan yang di-push ke repository `main` dapat digunakan sebagai sumber deployment berdasarkan konfigurasi Vercel.
 
 ---
 
@@ -524,18 +631,18 @@ Karakter visual:
 - Minimalist
 - Clean
 - Modern
-- Developer/technology aesthetic
+- Developer / technology aesthetic
 - Responsive
 - Subtle animations
 - Project-focused layout
 
-Portfolio mempertahankan identitas visual dari portfolio sebelumnya tetapi dikembangkan agar lebih modern, clean, responsive, dan maintainable.
+Portfolio mempertahankan identitas visual dari portfolio sebelumnya dengan pendekatan yang lebih modern, clean, responsive, dan maintainable.
 
 ---
 
 # 📱 Responsive Design
 
-Portfolio dirancang agar dapat digunakan pada berbagai ukuran layar.
+Portfolio dirancang untuk berbagai ukuran layar.
 
 ### Mobile
 
@@ -585,9 +692,9 @@ Animation digunakan untuk meningkatkan interaksi tanpa mengganggu readability da
 
 # 🧩 UI Components
 
-Beberapa UI component menggunakan ShadCN UI.
+Beberapa UI component menggunakan **ShadCN UI**.
 
-Dependency yang digunakan antara lain:
+Component yang digunakan antara lain:
 
 - Input
 - Button
@@ -604,42 +711,66 @@ Component digunakan sesuai kebutuhan halaman dan interaction pada portfolio.
 
 # 🖼️ Assets
 
-Asset portfolio disimpan di dalam folder:
+Asset portfolio disimpan di dalam:
 
 ```text
 public/
 ```
 
-Asset dapat berupa:
+Termasuk:
 
-- Images
-- Project previews
-- Icons
 - Profile images
+- Project images
+- Project assets
+- Icons
 - Other static resources
 
-Asset yang digunakan dalam portfolio merupakan bagian dari project Portfolio V4.
+Project-specific assets dapat ditempatkan di:
+
+```text
+public/projects/
+```
 
 ---
 
 # 📌 Project Principle
 
-Portfolio ini memiliki prinsip:
+Portfolio ini mengikuti prinsip:
 
 > **Portfolio ≠ Project**
 
-Portfolio berfungsi sebagai katalog dan showcase.
+Portfolio berfungsi sebagai:
 
-Project merupakan aplikasi atau website sebenarnya yang memiliki:
+```text
+Catalog
+Showcase
+Project Directory
+```
 
-- Identitas
-- Fungsi
-- Struktur
-- Teknologi
-- Source code
-- Deployment
+Sedangkan project merupakan aplikasi atau website sebenarnya yang memiliki:
 
-Portfolio digunakan untuk mengarahkan pengunjung menuju project sebenarnya.
+```text
+Identity
+Function
+Structure
+Technology
+Source Code
+Deployment
+```
+
+Flow yang digunakan:
+
+```text
+Portfolio
+    ↓
+Project Card
+    ↓
+View Project
+    ↓
+Standalone Project Website
+```
+
+Dengan pendekatan ini, portfolio tetap menjadi **personal showcase**, sedangkan setiap project dapat berkembang sebagai website atau aplikasi yang memiliki identitasnya sendiri.
 
 ---
 
@@ -659,7 +790,7 @@ https://github.com/baraaprtm
 
 Email:
 
-**[baraaprtm@gmail.com](mailto:baraaprtm@gmail.com)**
+[baraaprtm@gmail.com](mailto:baraaprtm@gmail.com)
 
 ---
 
@@ -667,20 +798,29 @@ Email:
 
 Untuk menghubungi saya:
 
-**Email:**
+**Email**
+
 [baraaprtm@gmail.com](mailto:baraaprtm@gmail.com)
 
-**GitHub:**
+**GitHub**
+
 https://github.com/baraaprtm
 
-**Instagram:**
+**Instagram**
+
 https://www.instagram.com/baraaprtm_
 
-**TikTok:**
+**TikTok**
+
 https://www.tiktok.com/@baraasoftboy
 
-**Telegram:**
+**Telegram**
+
 https://t.me/baraaprtm
+
+**Discord**
+
+https://discord.com/users/baraaprtm
 
 ---
 
@@ -689,3 +829,21 @@ https://t.me/baraaprtm
 This project is a personal portfolio website owned and maintained by **Baraa Pratama**.
 
 © Baraa Pratama. All rights reserved.
+
+````
+
+**Catatan penting:** setelah lu paste README ini, jangan commit dulu kalau `secure-authentication/page.tsx` belum selesai. Kita sekalian bisa masukin dua perubahan ini ke **satu commit** setelah `npm run build` berhasil:
+
+```bash
+npm run build
+````
+
+Kalau sudah `build` **PASS**, baru:
+
+```bash
+git add .
+git commit -m "Add secure authentication project and update README"
+git push origin main
+```
+
+Jadi nanti Vercel cukup deploy **sekali**, nggak perlu push berkali-kali.
