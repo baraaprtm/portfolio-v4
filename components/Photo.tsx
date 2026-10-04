@@ -6,32 +6,42 @@ import { motion } from "framer-motion";
 const Photo = () => {
   return (
     <div className="w-full h-full relative flex justify-center items-center">
+      {/* Wrapper untuk Entrance Animation: Fade + Scale */}
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{
           opacity: 1,
-          transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+          scale: 1,
+          transition: { delay: 0.3, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }
         }}
         className="relative flex justify-center items-center"
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 2, duration: 0.4, ease: "easeInOut" },
-          }}
-          className="w-[252px] h-[252px] sm:w-[298px] sm:h-[298px] lg:w-[360px] lg:h-[360px] 2xl:w-[498px] 2xl:h-[498px] mix-blend-lighten absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        >
-          <Image
-            src="/assets/photo.png"
-            priority
-            quality={100}
-            fill
-            alt="Baraa Pratama"
-            className="object-contain"
-          />
-        </motion.div>
+        {/* Centering Wrapper (Static) - menjaga transform Tailwind tidak tertimpa */}
+        <div className="w-[252px] h-[252px] sm:w-[298px] sm:h-[298px] lg:w-[360px] lg:h-[360px] 2xl:w-[498px] 2xl:h-[498px] mix-blend-lighten absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          
+          {/* Floating Wrapper (Animated) - Hanya mengurus translateY */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-full h-full relative"
+            style={{ willChange: "transform" }}
+          >
+            <Image
+              src="/assets/photo.png"
+              priority
+              quality={100}
+              fill
+              alt="Baraa Pratama"
+              className="object-contain"
+            />
+          </motion.div>
+        </div>
 
+        {/* SVG Circle (Tetap seperti aslinya) */}
         <motion.svg
           className="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[364px] lg:h-[364px] 2xl:w-[506px] 2xl:h-[506px]"
           fill="transparent"

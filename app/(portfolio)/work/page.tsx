@@ -3,7 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  Variants,
+  useReducedMotion,
+} from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -84,8 +89,39 @@ const projects = [
   },
 ];
 
+// Variants untuk Stagger Reveal Teks
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.15 },
+  },
+};
+
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
+  const shouldReduceMotion = useReducedMotion();
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+    },
+    exit: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : -10,
+      transition: { duration: 0.15 },
+    },
+  };
 
   interface SwiperType {
     activeIndex: number;
@@ -100,58 +136,87 @@ const Work = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.44, ease: "easeIn" },
+        transition: { delay: 0.6, duration: 0.4, ease: "easeIn" },
       }}
       className="h-auto lg:h-[calc(100vh-7rem)] flex flex-col justify-center py-6 lg:py-0"
     >
       <div className="container mx-auto px-4 xl:px-8">
         <div className="flex flex-col lg:flex-row lg:gap-[30px]">
+          {/* LEFT TEXT CONTENT */}
           <div className="w-full lg:w-[50%] lg:h-[440px] flex flex-col lg:justify-between order-2 lg:order-none">
-            <div className="flex flex-col gap-4 h-full">
-              <div className="text-5xl lg:text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              <h2 className="text-3xl lg:text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
-              </h2>
-              <p className="text-white/60">{project.description}</p>
-              <ul className="flex flex-wrap gap-4">
-                {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
-                    {item.name}
-                    {index !== project.stack.length - 1 && ","}
-                  </li>
-                ))}
-              </ul>
-              <div className="border border-white/20"></div>
-              <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[60px] h-[60px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[60px] h-[60px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-2xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={project.num}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="flex flex-col gap-4 h-full"
+              >
+                <motion.div
+                  variants={itemVariants}
+                  className="text-5xl lg:text-8xl leading-none font-extrabold text-transparent text-outline"
+                >
+                  {project.num}
+                </motion.div>
+                <motion.h2
+                  variants={itemVariants}
+                  className="text-3xl lg:text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize"
+                >
+                  {project.category} project
+                </motion.h2>
+                <motion.p variants={itemVariants} className="text-white/60">
+                  {project.description}
+                </motion.p>
+                <motion.ul
+                  variants={itemVariants}
+                  className="flex flex-wrap gap-4"
+                >
+                  {project.stack.map((item, index) => (
+                    <li key={index} className="text-xl text-accent">
+                      {item.name}
+                      {index !== project.stack.length - 1 && ","}
+                    </li>
+                  ))}
+                </motion.ul>
+                <motion.div
+                  variants={itemVariants}
+                  className="border border-white/20"
+                ></motion.div>
+                <motion.div
+                  variants={itemVariants}
+                  className="flex items-center gap-4"
+                >
+                  <Link href={project.live}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[60px] h-[60px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                  <Link href={project.github}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[60px] h-[60px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-2xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </div>
+
+          {/* RIGHT SWIPER IMAGE */}
           <div className="w-full lg:w-[50%]">
             <Swiper
               spaceBetween={30}
@@ -159,20 +224,37 @@ const Work = () => {
               className="lg:h-[460px] mb-8"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => {
+              {projects.map((proj, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[320px] sm:h-[400px] lg:h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover"
-                          alt={project.title}
-                        />
+                    {({ isActive }) => (
+                      <div className="h-[320px] sm:h-[400px] lg:h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                        <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                        <motion.div
+                          className="relative w-full h-full overflow-hidden"
+                          initial={false}
+                          animate={{
+                            // Jika reduce motion: selalu tampilkan utuh. Jika tidak: reveal saat aktif, hidden saat tidak.
+                            clipPath: shouldReduceMotion
+                              ? "inset(0% 0% 0% 0%)"
+                              : isActive
+                                ? "inset(0% 0% 0% 0%)"
+                                : "inset(100% 0% 0% 0%)",
+                          }}
+                          transition={{
+                            duration: 0.7,
+                            ease: [0.25, 0.1, 0.25, 1],
+                          }}
+                        >
+                          <Image
+                            src={proj.image}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                            alt={proj.title}
+                          />
+                        </motion.div>
                       </div>
-                    </div>
+                    )}
                   </SwiperSlide>
                 );
               })}

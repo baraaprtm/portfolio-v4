@@ -12,9 +12,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
 import { SelectGroup, SelectLabel } from "@radix-ui/react-select";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 const info = [
   {
@@ -87,6 +87,7 @@ const Contact = () => {
     }
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     if (!emailRegex.test(email)) {
       setIsError(true);
       setStatusMessage("Please enter a valid email address.");
@@ -94,6 +95,7 @@ const Contact = () => {
     }
 
     const phoneRegex = /^\+?\d{8,15}$/;
+
     if (!phoneRegex.test(phone)) {
       setIsError(true);
       setStatusMessage("Please enter a valid phone number.");
@@ -126,10 +128,10 @@ const Contact = () => {
 
       const templateParams = {
         name: `${firstName} ${lastName}`,
-        email: email,
-        phone: phone,
-        service: service,
-        message: message,
+        email,
+        phone,
+        service,
+        message,
       };
 
       await emailjs.send(serviceId, templateId, templateParams, {
@@ -138,6 +140,7 @@ const Contact = () => {
 
       setIsError(false);
       setStatusMessage("Message sent successfully!");
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -148,6 +151,7 @@ const Contact = () => {
       });
     } catch (error: any) {
       console.error("EmailJS Error:", JSON.stringify(error, null, 2));
+
       setIsError(true);
       setStatusMessage(
         error?.text ||
@@ -160,18 +164,7 @@ const Contact = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          delay: 2.4,
-          duration: 0.44,
-          ease: "easeIn",
-        },
-      }}
-      className="min-h-[calc(100vh-9rem)] flex items-center py-6 lg:py-4"
-    >
+    <div className="min-h-[calc(100vh-9rem)] flex items-center py-6 lg:py-4">
       <div className="container mx-auto px-4 xl:px-8 w-full">
         <div className="flex flex-col lg:flex-row gap-[30px]">
           {/* Form */}
@@ -180,14 +173,47 @@ const Contact = () => {
               onSubmit={handleSubmit}
               className="flex flex-col gap-2 p-4 sm:p-4 lg:p-4 bg-[#27272c] rounded-xl"
             >
-              <h3 className="text-3xl lg:text-4xl text-accent">
+              {/* Heading */}
+              <motion.h3
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 1.5,
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="text-3xl lg:text-4xl text-accent"
+              >
                 Let's work together
-              </h3>
-              <p className="text-white/60">
-                Have a project in mind? Let's build reliable software, scalable systems, robust APIs, and well-structured databases together.
-              </p>
+              </motion.h3>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 2.1,
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="text-white/60"
+              >
+                Have a project in mind? Let’s build something reliable,
+                scalable, and built to last — from web applications and APIs to
+                backend systems and databases..
+              </motion.p>
+
+              {/* Inputs */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 2.7,
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-2"
+              >
                 <Input
                   name="firstName"
                   placeholder="First Name"
@@ -196,6 +222,7 @@ const Contact = () => {
                   required
                   disabled={isLoading}
                 />
+
                 <Input
                   name="lastName"
                   placeholder="Last Name"
@@ -204,6 +231,7 @@ const Contact = () => {
                   required
                   disabled={isLoading}
                 />
+
                 <Input
                   name="email"
                   type="email"
@@ -213,6 +241,7 @@ const Contact = () => {
                   required
                   disabled={isLoading}
                 />
+
                 <Input
                   name="phone"
                   placeholder="Phone number"
@@ -221,77 +250,128 @@ const Contact = () => {
                   required
                   disabled={isLoading}
                 />
-              </div>
+              </motion.div>
 
-              <Select
-                value={formData.service}
-                onValueChange={handleSelectChange}
-                disabled={isLoading}
+              {/* Select */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 3.3,
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="backend">Backend Development</SelectItem>
-                    <SelectItem value="api">API Development</SelectItem>
-                    <SelectItem value="database">Database Design</SelectItem>
-                    <SelectItem value="system">System Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+                <Select
+                  value={formData.service}
+                  onValueChange={handleSelectChange}
+                  disabled={isLoading}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
 
-              <Textarea
-                name="message"
-                className="h-[70px]"
-                placeholder="Type your message here."
-                value={formData.message}
-                onChange={handleChange}
-                required
-                disabled={isLoading}
-              />
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Select a service</SelectLabel>
+
+                      <SelectItem value="backend">
+                        Backend Development
+                      </SelectItem>
+
+                      <SelectItem value="api">API Development</SelectItem>
+
+                      <SelectItem value="database">Database Design</SelectItem>
+
+                      <SelectItem value="system">System Design</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </motion.div>
+
+              {/* Message */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 3.9,
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <Textarea
+                  name="message"
+                  className="h-[70px]"
+                  placeholder="Type your message here."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  disabled={isLoading}
+                />
+              </motion.div>
 
               {statusMessage && (
                 <div
-                  className={`text-sm ${isError ? "text-red-500" : "text-green-500"}`}
+                  className={`text-sm ${
+                    isError ? "text-red-500" : "text-green-500"
+                  }`}
                 >
                   {statusMessage}
                 </div>
               )}
 
-              <Button
-                type="submit"
-                size="lg"
-                className="max-w-40"
-                disabled={isLoading}
+              {/* Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 4.5,
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
-                {isLoading ? "Sending..." : "Send Message"}
-              </Button>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="max-w-none rounded-md px-6 bg-transparent text-white/70 border border-white/20 hover:text-accent hover:border-accent transition-all duration-300"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Sending..." : "Send Message"}
+                </Button>
+              </motion.div>
             </form>
           </div>
 
           {/* Info */}
           <div className="flex-1 flex items-center justify-start lg:justify-end order-1 lg:order-none mb-10 lg:mb-0">
             <ul className="flex flex-col gap-8">
-              {info.map((item, index) => {
-                return (
-                  <li key={index} className="flex items-center gap-6">
-                    <div className="flex items-center justify-center shrink-0 w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] bg-[#27272c] text-accent rounded-md">
-                      <div className="text-[28px]">{item.icon}</div>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
-                    </div>
-                  </li>
-                );
-              })}
+              {info.map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 5.1 + index * 0.6,
+                    duration: 0.45,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="flex items-center gap-6"
+                >
+                  <div className="flex items-center justify-center shrink-0 w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] bg-[#27272c] text-accent rounded-md">
+                    <div className="text-[28px]">{item.icon}</div>
+                  </div>
+
+                  <div className="flex-1">
+                    <p className="text-white/60">{item.title}</p>
+                    <h3 className="text-xl">{item.description}</h3>
+                  </div>
+                </motion.li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

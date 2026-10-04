@@ -38,7 +38,7 @@ interface SocialsProps {
 const Socials = ({ containerStyles, iconStyles }: SocialsProps) => {
   return (
     <div
-      className={`flex justify-center xl:justify-start ${
+      className={`flex items-center justify-center xl:justify-start gap-5 ${
         containerStyles ?? ""
       }`}
     >
@@ -49,7 +49,9 @@ const Socials = ({ containerStyles, iconStyles }: SocialsProps) => {
             href={item.path}
             target="_blank"
             rel="noopener noreferrer"
-            className={iconStyles}
+            className={`text-white/70 hover:text-accent text-[22px] transition-all duration-300 hover:-translate-y-1 ${
+              iconStyles ?? ""
+            }`}
           >
             {item.icon}
           </Link>

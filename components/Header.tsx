@@ -12,12 +12,20 @@ const Header = () => {
             Baraa <span className="text-accent">.</span>
           </h1>
         </Link>
+
         <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           <Nav />
+
           <Link href="/contact">
-            <Button>Hire me</Button>
+            <Button
+              size="lg"
+              className="rounded-md px-6 bg-transparent text-white/70 border border-white/20 hover:text-accent hover:border-accent transition-all duration-300"
+            >
+              Hire me
+            </Button>
           </Link>
         </div>
+
         <div className="lg:hidden flex items-center">
           <MobileNav />
         </div>
